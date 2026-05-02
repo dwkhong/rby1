@@ -258,10 +258,8 @@ bool MasterArm::StartControl(const std::function<ControlInput(const State& state
 
           duration_sum += std::chrono::duration_cast<std::chrono::nanoseconds>(end_time - start_time).count() / 1.0e9;
           duration_count++;
-          if (duration_count % 100 == 0) {
-            std::cout << "avg: " << duration_sum / duration_count * 1000 << " ms" << " (count: " << duration_count
-                      << ")" << std::endl;
-          }
+          (void)duration_sum;
+          (void)duration_count;
         }
       },
       std::chrono::nanoseconds((long)(control_period_ * 1e9)));
