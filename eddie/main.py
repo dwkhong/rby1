@@ -3,17 +3,20 @@ import save_position as sp
 import master_arm as ma
 import move_position as mp
 import gripper as gr
+import mobile as mb
 
 MENU = {
-    "1": ("RPC 연결",        sp.connect),
+    "1": ("RPC 연결",          sp.connect),
     "2": ("현재 위치 가져오기", sp.get_position),
     "3": ("마스터암 연결",     ma.connect),
     "4": ("마스터암 해제",     ma.disconnect),
     "5": ("현재 위치 저장",    sp.save_position),
     "6": ("저장된 위치 확인",   mp.show_positions),
-    "7": ("저장 위치로 이동",   mp.move_to),
-    "8": ("그리퍼 연결/호밍",   gr.connect),
-    "9": ("그리퍼 수동 제어",   gr.manual_control),
+    "7": ("모바일 베이스 이동", mb.mobile_move),
+    "8": ("저장 위치로 이동",   mp.move_to),
+    "9": ("그리퍼 연결/호밍",   gr.connect),
+    "0": ("그리퍼 수동 제어",   gr.manual_control),
+    "10": ("시나리오 자동 실행", mp.run_scenario),
     "q": ("종료",            None),
 }
 
